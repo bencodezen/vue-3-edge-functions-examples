@@ -1,13 +1,25 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { ref } from 'vue'
 import TheHeader from './components/TheHeader.vue'
+
+const helloResponse = ref('Empty String')
+
+fetch('/api/hello-world')
+  .then(response => response.json())
+  .then(data => {
+    console.log('THIS IS HERE!')
+    console.log(data)
+    helloResponse.value = data
+  })
 </script>
 
 <template>
   <TheHeader />
   <main class="main">
     <h1>Edge Functions on Netlify</h1>
+    <h2>{{ helloResponse }}</h2>
     <p>
       Explore a library of reference examples for learning about Edge Functions
       on Netlify.
