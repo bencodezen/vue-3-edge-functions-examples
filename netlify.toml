@@ -15,3 +15,7 @@
 [[edge_functions]]
   function = "dad-joke"
   path = "/api/dad-joke"
+
+[[edge_functions]]
+  function = "geolocation"
+  path = "/api/geolocation"

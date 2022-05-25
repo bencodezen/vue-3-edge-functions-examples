@@ -3,6 +3,8 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref } from 'vue'
 import TheHeader from './components/TheHeader.vue'
+import DadJoke from './components/DadJoke.vue'
+import MyCountry from './components/MyCountry.vue'
 
 const helloResponse = ref('Empty String')
 
@@ -20,6 +22,11 @@ fetch('/api/hello-world')
   <main class="main">
     <h1>Edge Functions on Netlify</h1>
     <h2>{{ helloResponse }}</h2>
+    <h3>Dad Joke Component</h3>
+    <MyCountry />
+    <Suspense>
+      <DadJoke />
+    </Suspense>
     <p>
       Explore a library of reference examples for learning about Edge Functions
       on Netlify.
